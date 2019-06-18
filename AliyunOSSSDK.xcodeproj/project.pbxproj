@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4CEF14F81F5522A1007010B8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216256EF1CF1B1580086458F /* SystemConfiguration.framework */; };
+		63612DFAA13BBB7634EAF776 /* Pods_AliyunOSSSwift_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C7F7A903C2CC56CBA67262 /* Pods_AliyunOSSSwift_iOS.framework */; };
 		D80C81F51FC824E2008E3900 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80C81F41FC824D5008E3900 /* SystemConfiguration.framework */; };
 		D80C81F71FC824FF008E3900 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80C81F61FC824FF008E3900 /* CoreTelephony.framework */; };
 		D80C81FB1FC82541008E3900 /* OSSModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D87183091FC56358000DD9EC /* OSSModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -227,6 +228,9 @@
 		216256EF1CF1B1580086458F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4C7D8BB61F8CC70F005D3040 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		4C7D8BB81F8CC741005D3040 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		8AC3E6412FDF7AD7B97F58F2 /* Pods-AliyunOSSSwift-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliyunOSSSwift-iOS.debug.xcconfig"; path = "Target Support Files/Pods-AliyunOSSSwift-iOS/Pods-AliyunOSSSwift-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C5DF061D2450B5074E89AF24 /* Pods-AliyunOSSSwift-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliyunOSSSwift-iOS.release.xcconfig"; path = "Target Support Files/Pods-AliyunOSSSwift-iOS/Pods-AliyunOSSSwift-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		D2C7F7A903C2CC56CBA67262 /* Pods_AliyunOSSSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AliyunOSSSwift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80C81EC1FC824A8008E3900 /* AliyunOSSOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AliyunOSSOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80C81F41FC824D5008E3900 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		D80C81F61FC824FF008E3900 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
@@ -361,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D842D59B1FFCAAD600220913 /* AliyunOSSiOS.framework in Frameworks */,
+				63612DFAA13BBB7634EAF776 /* Pods_AliyunOSSSwift_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +382,7 @@
 				4C7D8BB61F8CC70F005D3040 /* CFNetwork.framework */,
 				216256EF1CF1B1580086458F /* SystemConfiguration.framework */,
 				216256EC1CF1B1210086458F /* libresolv.tbd */,
+				D2C7F7A903C2CC56CBA67262 /* Pods_AliyunOSSSwift_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				D87183061FC56358000DD9EC /* AliyunOSSSDK */,
 				21028BBD1BA9ABF500C2A6BA /* Products */,
 				124FC752CC2150C34DBACDBC /* Frameworks */,
+				AD6AD5584B601FE1FEE85738 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -399,6 +406,16 @@
 				D842D5911FFCA8F300220913 /* AliyunOSSSwiftSDK.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AD6AD5584B601FE1FEE85738 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AC3E6412FDF7AD7B97F58F2 /* Pods-AliyunOSSSwift-iOS.debug.xcconfig */,
+				C5DF061D2450B5074E89AF24 /* Pods-AliyunOSSSwift-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = "../yuni-ios/Yuni/Pods";
 			sourceTree = "<group>";
 		};
 		D842D59D1FFCB82E00220913 /* Supporting Files */ = {
@@ -711,6 +728,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D842D5961FFCA8F300220913 /* Build configuration list for PBXNativeTarget "AliyunOSSSwift-iOS" */;
 			buildPhases = (
+				2633176E99D4796F5C316E4E /* [CP] Check Pods Manifest.lock */,
 				D842D58C1FFCA8F300220913 /* Sources */,
 				D842D58D1FFCA8F300220913 /* Frameworks */,
 				D842D58E1FFCA8F300220913 /* Headers */,
@@ -756,6 +774,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -794,6 +813,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2633176E99D4796F5C316E4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AliyunOSSSwift-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		21028BB71BA9ABF500C2A6BA /* Sources */ = {
@@ -1178,6 +1222,7 @@
 		};
 		D842D5971FFCA8F300220913 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AC3E6412FDF7AD7B97F58F2 /* Pods-AliyunOSSSwift-iOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1189,14 +1234,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6ND67KCL32;
+				DEVELOPMENT_TEAM = 62P274T384;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/AliyunOSSSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aliyun.swift.oss.AliyunOSSSwift-iOS";
@@ -1204,13 +1249,14 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		D842D5981FFCA8F300220913 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5DF061D2450B5074E89AF24 /* Pods-AliyunOSSSwift-iOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1220,20 +1266,20 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6ND67KCL32;
+				DEVELOPMENT_TEAM = 62P274T384;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/AliyunOSSSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aliyun.swift.oss.AliyunOSSSwift-iOS";
 				PRODUCT_NAME = AliyunOSSSwiftSDK;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

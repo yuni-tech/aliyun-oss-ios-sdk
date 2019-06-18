@@ -54,23 +54,23 @@ public func _OSSLogMessage(_ message: @autoclosure () -> String, level: OSSDDLog
 }
 
 public func OSSLogDebug(_ message: @autoclosure () -> String, level: OSSDDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: Any? = nil, asynchronous async: Bool = true, osslog: OSSDDLog = OSSDDLog.sharedInstance) {
-    _OSSLogMessage(message, level: level, flag: .debug, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
+    _OSSLogMessage(message(), level: level, flag: .debug, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
 }
 
 public func OSSLogInfo(_ message: @autoclosure () -> String, level: OSSDDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: Any? = nil, asynchronous async: Bool = true, osslog: OSSDDLog = OSSDDLog.sharedInstance) {
-    _OSSLogMessage(message, level: level, flag: .info, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
+    _OSSLogMessage(message(), level: level, flag: .info, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
 }
 
 public func OSSLogWarn(_ message: @autoclosure () -> String, level: OSSDDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: Any? = nil, asynchronous async: Bool = true, osslog: OSSDDLog = OSSDDLog.sharedInstance) {
-    _OSSLogMessage(message, level: level, flag: .warning, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
+    _OSSLogMessage(message(), level: level, flag: .warning, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
 }
 
 public func OSSLogVerbose(_ message: @autoclosure () -> String, level: OSSDDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: Any? = nil, asynchronous async: Bool = true, osslog: OSSDDLog = OSSDDLog.sharedInstance) {
-    _OSSLogMessage(message, level: level, flag: .verbose, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
+    _OSSLogMessage(message(), level: level, flag: .verbose, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
 }
 
 public func OSSLogError(_ message: @autoclosure () -> String, level: OSSDDLogLevel = defaultDebugLevel, context: Int = 0, file: StaticString = #file, function: StaticString = #function, line: UInt = #line, tag: Any? = nil, asynchronous async: Bool = false, osslog: OSSDDLog = OSSDDLog.sharedInstance) {
-    _OSSLogMessage(message, level: level, flag: .error, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
+    _OSSLogMessage(message(), level: level, flag: .error, context: context, file: file, function: function, line: line, tag: tag, asynchronous: async, osslog: osslog)
 }
 
 /// Returns a String of the current filename, without full path or extension.
