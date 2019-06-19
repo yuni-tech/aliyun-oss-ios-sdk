@@ -14,15 +14,28 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        self.thread = [[NSThread alloc]initWithTarget:self selector:@selector(run) object:nil];
+        [self.thread start];
     }
     return self;
+}
+
+- (void)dealloc {
+    [self.thread cancel];
+}
+
+- (void)run{
+    @autoreleasepool {
+        self.runLoop = [NSRunLoop currentRunLoop];
+        [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] run];
+    }
 }
 
 - (NSURLSessionDataTask *)getDataTask:(OSSNetworkingRequestDelegate *)request
                           withSession:(NSURLSession *)session
 {
     self.dataTask = [session uploadTaskWithStreamedRequest:request.internalRequest];
-//    self.requestDelegate = request;
     return self.dataTask;
 }
      
@@ -39,7 +52,7 @@
     self.bodyStream = inputStream;
     self.outputStream = outputStream;
     self.outputStream.delegate = self;
-    [self.outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [self.outputStream scheduleInRunLoop:self.runLoop forMode:NSDefaultRunLoopMode];
     [self.outputStream open];
     completionHandler(self.bodyStream);
 }
@@ -57,17 +70,20 @@
             if (len > 0) {
                 [self.outputStream write:yuniOSSSharedBuffer maxLength:len];
             } else {
+                [self.thread cancel];
                 [self.fileStream close];
                 [self.outputStream close];
             }
         } break;
             
         case NSStreamEventErrorOccurred:
+            [self.thread cancel];
             [aStream close];
             [aStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
             aStream = nil;
         break;
         case NSStreamEventEndEncountered:
+            [self.thread cancel];
             [aStream close];
             [aStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
             aStream = nil;
