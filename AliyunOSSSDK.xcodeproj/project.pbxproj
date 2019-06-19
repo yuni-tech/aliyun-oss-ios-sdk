@@ -210,6 +210,14 @@
 		D8C5E54E1FCEB57600613BA5 /* NSMutableData+OSS_CRC.h in Headers */ = {isa = PBXBuildFile; fileRef = D8C5E54B1FCEB57600613BA5 /* NSMutableData+OSS_CRC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8C5E54F1FCEB57600613BA5 /* NSMutableData+OSS_CRC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C5E54C1FCEB57600613BA5 /* NSMutableData+OSS_CRC.m */; };
 		D8C5E5501FCEB57600613BA5 /* NSMutableData+OSS_CRC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C5E54C1FCEB57600613BA5 /* NSMutableData+OSS_CRC.m */; };
+		E9CF0FAC22B907280016463B /* YuniOSSUploadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E9CF0FAB22B907280016463B /* YuniOSSUploadDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9CF0FAE22B9D9AC0016463B /* YuniOSSUploadDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CF0FAD22B9D9AC0016463B /* YuniOSSUploadDelegate.m */; };
+		E9CF0FB122B9E6DA0016463B /* YuniOSSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CF0FB022B9E6DA0016463B /* YuniOSSClient.m */; };
+		E9CF0FB622B9EC900016463B /* YuniOSSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E9CF0FAF22B9E6910016463B /* YuniOSSClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9CF0FB722B9EC930016463B /* YuniOSSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E9CF0FAF22B9E6910016463B /* YuniOSSClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9CF0FB822B9EC970016463B /* YuniOSSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CF0FB022B9E6DA0016463B /* YuniOSSClient.m */; };
+		E9CF0FB922B9EC9A0016463B /* YuniOSSUploadDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CF0FAD22B9D9AC0016463B /* YuniOSSUploadDelegate.m */; };
+		E9CF0FBA22B9EC9C0016463B /* YuniOSSUploadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = E9CF0FAB22B907280016463B /* YuniOSSUploadDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +346,10 @@
 		D8C5E5401FCE915000613BA5 /* aos_crc64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aos_crc64.c; sourceTree = "<group>"; };
 		D8C5E54B1FCEB57600613BA5 /* NSMutableData+OSS_CRC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableData+OSS_CRC.h"; sourceTree = "<group>"; };
 		D8C5E54C1FCEB57600613BA5 /* NSMutableData+OSS_CRC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableData+OSS_CRC.m"; sourceTree = "<group>"; };
+		E9CF0FAB22B907280016463B /* YuniOSSUploadDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YuniOSSUploadDelegate.h; sourceTree = "<group>"; };
+		E9CF0FAD22B9D9AC0016463B /* YuniOSSUploadDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YuniOSSUploadDelegate.m; sourceTree = "<group>"; };
+		E9CF0FAF22B9E6910016463B /* YuniOSSClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YuniOSSClient.h; sourceTree = "<group>"; };
+		E9CF0FB022B9E6DA0016463B /* YuniOSSClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YuniOSSClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +402,7 @@
 		21028BB21BA9ABF500C2A6BA = {
 			isa = PBXGroup;
 			children = (
+				E9CF0FAA22B903DF0016463B /* YuniOSS */,
 				D842D59D1FFCB82E00220913 /* Supporting Files */,
 				D87183061FC56358000DD9EC /* AliyunOSSSDK */,
 				21028BBD1BA9ABF500C2A6BA /* Products */,
@@ -558,6 +571,17 @@
 			path = OSSFileLog;
 			sourceTree = "<group>";
 		};
+		E9CF0FAA22B903DF0016463B /* YuniOSS */ = {
+			isa = PBXGroup;
+			children = (
+				E9CF0FAB22B907280016463B /* YuniOSSUploadDelegate.h */,
+				E9CF0FAD22B9D9AC0016463B /* YuniOSSUploadDelegate.m */,
+				E9CF0FAF22B9E6910016463B /* YuniOSSClient.h */,
+				E9CF0FB022B9E6DA0016463B /* YuniOSSClient.m */,
+			);
+			path = YuniOSS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -572,6 +596,8 @@
 				D8C41B211FCC2FD20091699B /* OSSClient.h in Headers */,
 				D8C41B231FCC2FD20091699B /* OSSHttpdns.h in Headers */,
 				D8C41B241FCC2FD20091699B /* OSSNetworking.h in Headers */,
+				E9CF0FAC22B907280016463B /* YuniOSSUploadDelegate.h in Headers */,
+				E9CF0FB622B9EC900016463B /* YuniOSSClient.h in Headers */,
 				D8C41B251FCC2FD20091699B /* OSSIPv6Adapter.h in Headers */,
 				D8C41B261FCC2FD20091699B /* OSSReachabilityManager.h in Headers */,
 				D8C41B2A1FCC2FD20091699B /* OSSIPv6PrefixResolver.h in Headers */,
@@ -645,12 +671,14 @@
 				D80C820B1FC82579008E3900 /* OSSCocoaLumberjack.h in Headers */,
 				D85277EC2015BBAD00D7B1DE /* OSSRequest.h in Headers */,
 				D85277F92015CB3500D7B1DE /* OSSAllRequestNeededMessage.h in Headers */,
+				E9CF0FB722B9EC930016463B /* YuniOSSClient.h in Headers */,
 				D85278112015DF4900D7B1DE /* OSSConstants.h in Headers */,
 				D85278052015D58400D7B1DE /* OSSHttpResponseParser.h in Headers */,
 				D85277F22015BD5A00D7B1DE /* OSSNetworkingRequestDelegate.h in Headers */,
 				D852780B2015D59000D7B1DE /* OSSURLRequestRetryHandler.h in Headers */,
 				D80C820A1FC82577008E3900 /* OSSDDLog.h in Headers */,
 				D80C82091FC82574008E3900 /* OSSFileLogger.h in Headers */,
+				E9CF0FBA22B9EC9C0016463B /* YuniOSSUploadDelegate.h in Headers */,
 				D80C82071FC8256F008E3900 /* OSSNSLogger.h in Headers */,
 				D80C82031FC8255F008E3900 /* OSSDefine.h in Headers */,
 				D80C88D0201AC21200F379D8 /* OSSResult.h in Headers */,
@@ -855,6 +883,7 @@
 				D827B40D21107169003A24F6 /* NSDate+OSS.m in Sources */,
 				D8C41AEC1FCC2F920091699B /* OSSLog.m in Sources */,
 				D827B4252111A71B003A24F6 /* OSSRestoreObjectRequest.m in Sources */,
+				E9CF0FAE22B9D9AC0016463B /* YuniOSSUploadDelegate.m in Sources */,
 				D8C41AF01FCC2F920091699B /* OSSModel.m in Sources */,
 				D8C41AF51FCC2F920091699B /* OSSIPv6PrefixResolver.m in Sources */,
 				D85278062015D58400D7B1DE /* OSSHttpResponseParser.m in Sources */,
@@ -862,6 +891,7 @@
 				D80C88EF201B06E200F379D8 /* OSSDeleteMultipleObjectsResult.m in Sources */,
 				D8C41AF71FCC2F920091699B /* OSSIPv6Adapter.m in Sources */,
 				D827B4192111A6E4003A24F6 /* OSSPutSymlinkRequest.m in Sources */,
+				E9CF0FB122B9E6DA0016463B /* YuniOSSClient.m in Sources */,
 				D8C41AFA1FCC2F920091699B /* OSSCompat.m in Sources */,
 				D8C41AFC1FCC2F920091699B /* OSSCancellationTokenRegistration.m in Sources */,
 				D8C41AFD1FCC2F920091699B /* OSSBolts.m in Sources */,
@@ -905,9 +935,11 @@
 				D8C41AA81FCC284F0091699B /* OSSHttpdns.m in Sources */,
 				D8C41AAA1FCC284F0091699B /* OSSClient.m in Sources */,
 				D80C88D8201AC33000F379D8 /* OSSGetObjectACLResult.m in Sources */,
+				E9CF0FB822B9EC970016463B /* YuniOSSClient.m in Sources */,
 				D827B40E21107169003A24F6 /* NSDate+OSS.m in Sources */,
 				D8C41AAD1FCC284F0091699B /* OSSLog.m in Sources */,
 				D827B4262111A71B003A24F6 /* OSSRestoreObjectRequest.m in Sources */,
+				E9CF0FB922B9EC9A0016463B /* YuniOSSUploadDelegate.m in Sources */,
 				D8C41AB11FCC284F0091699B /* OSSModel.m in Sources */,
 				D8C41AB61FCC284F0091699B /* OSSIPv6PrefixResolver.m in Sources */,
 				D85278072015D58400D7B1DE /* OSSHttpResponseParser.m in Sources */,

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 aliyun.com. All rights reserved.
 //
 
+#import <objc/runtime.h>
 #import "OSSDefine.h"
 #import "OSSNetworking.h"
 #import "OSSBolts.h"
@@ -17,6 +18,7 @@
 #import "OSSNetworkingRequestDelegate.h"
 #import "OSSURLRequestRetryHandler.h"
 #import "OSSHttpResponseParser.h"
+#import "YuniOSSUploadDelegate.h"
 
 @implementation OSSNetworkingConfiguration
 @end
@@ -226,16 +228,20 @@
         if (self.configuration.timeoutIntervalForRequest > 0) {
             requestDelegate.internalRequest.timeoutInterval = self.configuration.timeoutIntervalForRequest;
         }
+        
+        YuniOSSUploadDelegate * uploadDelegate = requestDelegate.uploadDelegate;
+        sessionTask = [uploadDelegate getDataTask:requestDelegate withSession:_session];
 
-        if (requestDelegate.uploadingData) {
-            [requestDelegate.internalRequest setHTTPBody:requestDelegate.uploadingData];
-            sessionTask = [_session dataTaskWithRequest:requestDelegate.internalRequest];
-        } else if (requestDelegate.uploadingFileURL) {
-            sessionTask = [_session uploadTaskWithRequest:requestDelegate.internalRequest fromFile:requestDelegate.uploadingFileURL];
-
+        if (!sessionTask) {
+            if (requestDelegate.uploadingData) {
+                [requestDelegate.internalRequest setHTTPBody:requestDelegate.uploadingData];
+                sessionTask = [_session dataTaskWithRequest:requestDelegate.internalRequest];
+            } else if (requestDelegate.uploadingFileURL) {
+                sessionTask = [_session uploadTaskWithRequest:requestDelegate.internalRequest fromFile:requestDelegate.uploadingFileURL];
                 requestDelegate.isBackgroundUploadFileTask = self.isUsingBackgroundSession;
-        } else { // not upload request
-            sessionTask = [_session dataTaskWithRequest:requestDelegate.internalRequest];
+            } else { // not upload request
+                sessionTask = [_session dataTaskWithRequest:requestDelegate.internalRequest];
+            }
         }
 
         requestDelegate.currentSessionTask = sessionTask;
@@ -490,6 +496,12 @@
         int64_t totalBytesExpectedToWrite = dataTask.response.expectedContentLength;
         delegate.downloadProgress(bytesWritten, delegate.payloadTotalBytesWritten, totalBytesExpectedToWrite);
     }
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task needNewBodyStream:(void (^)(NSInputStream * _Nullable))completionHandler {
+    OSSNetworkingRequestDelegate * delegate = [self.sessionDelagateManager objectForKey:@(task.taskIdentifier)];
+    YuniOSSUploadDelegate * uploadDelegate = delegate.uploadDelegate;
+    [uploadDelegate needNewBodyStream:task withSession:session withCompletionHandler:completionHandler];
 }
 
 #pragma mark - Private Methods

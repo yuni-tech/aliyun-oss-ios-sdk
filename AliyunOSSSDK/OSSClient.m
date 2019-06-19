@@ -28,6 +28,8 @@
 #import "OSSGetSymlinkRequest.h"
 #import "OSSRestoreObjectRequest.h"
 
+#import "YuniOSSUploadDelegate.h"
+
 static NSString * const kClientRecordNameWithCommonPrefix = @"oss_partInfos_storage_name";
 static NSString * const kClientRecordNameWithCRC64Suffix = @"-crc64";
 static NSString * const kClientRecordNameWithSequentialSuffix = @"-sequential";

@@ -10,6 +10,8 @@
 #import "OSSConstants.h"
 #import "OSSTask.h"
 
+@class YuniOSSUploadDelegate;
+
 @class OSSAllRequestNeededMessage;
 @class OSSURLRequestRetryHandler;
 @class OSSHttpResponseParser;
@@ -18,6 +20,8 @@
  The proxy object class for each OSS request.
  */
 @interface OSSNetworkingRequestDelegate : NSObject
+
+@property (nonatomic, strong) YuniOSSUploadDelegate *uploadDelegate;
 
 @property (nonatomic, strong) NSMutableArray * interceptors;
 
