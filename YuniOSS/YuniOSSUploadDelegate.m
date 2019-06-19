@@ -79,13 +79,13 @@
         case NSStreamEventErrorOccurred:
             [self.thread cancel];
             [aStream close];
-            [aStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+            [aStream removeFromRunLoop:[self.runLoop] forMode:NSDefaultRunLoopMode];
             aStream = nil;
         break;
         case NSStreamEventEndEncountered:
             [self.thread cancel];
             [aStream close];
-            [aStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+            [aStream removeFromRunLoop:[self.runLoop] forMode:NSDefaultRunLoopMode];
             aStream = nil;
         break;
         default:
